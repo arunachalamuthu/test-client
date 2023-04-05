@@ -21,30 +21,30 @@ const CreateLoginPage = () => {
 
     formData.append('image',image)
 
-    fetch('http://localhost:3005/ready',{
-      method:"POST",
-      body:formData
-    })
-    
-    // fetch('https://text-server.vercel.app/ready',{
+    // fetch('http://localhost:3005/ready',{
     //   method:"POST",
     //   body:formData
     // })
     
-    fetch('http://localhost:3005/login',{
+    fetch('https://text-server.vercel.app/ready',{
       method:"POST",
-      headers:{
-        'Content-type':'application/json'
-      },
-      body:JSON.stringify({ID:ID,Password:Password})
+      body:formData
     })
-    // fetch('https://text-server.vercel.app/login',{
+    
+    // fetch('http://localhost:3005/login',{
     //   method:"POST",
     //   headers:{
     //     'Content-type':'application/json'
     //   },
     //   body:JSON.stringify({ID:ID,Password:Password})
     // })
+    fetch('https://text-server.vercel.app/login',{
+      method:"POST",
+      headers:{
+        'Content-type':'application/json'
+      },
+      body:JSON.stringify({ID:ID,Password:Password})
+    })
   
   
   
