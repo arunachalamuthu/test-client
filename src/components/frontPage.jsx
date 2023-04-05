@@ -25,7 +25,7 @@ const FrontPage = () => {
   //change
 
   function call() {
-    if (search) {
+    if (search !==null) {
       // fetch(`http://localhost:3005/frontpage/${search}`)
       //   .then((res) => res.json())
       //   .then((data) => {
