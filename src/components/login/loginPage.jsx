@@ -27,20 +27,30 @@ const dispatch=useDispatch()
   //    console.log(data)
   //  })
 
-    // fetch(`http://localhost:3005/loginPage/${ID}&&${Password}`)
-     fetch(`https://text-server.vercel.app/loginPage/${ID}&&${Password}`)
+    //  fetch(`http://localhost:3005/loginPage/${ID}&&${Password}`)
+    //  fetch(`https://text-server.vercel.app/loginPage/${ID}&&${Password}`,{
+    //   headers:{}
+    //  })
+    fetch('https://text-server.vercel.app/loginPage',{
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify({
+      ID:ID,Password:Password
+      })
+    })
     .then((res)=>res.json())
     .then((data)=>{
     console.log(data)
-    if(data.message){
-    alert(data.message.ID)
-   dispatch(detailsAction.home(data.message.ID))
-    navigate('/home')
-    }
-    else{
-      alert('you dont have account')
-      alert('create a account ')
-    }
+  //   if(data.message){
+  //   alert(data.message.ID)
+  //  dispatch(detailsAction.home(data.message.ID))
+  //   navigate('/home')
+  //   }
+  //   else{
+  //     alert('you dont have account')
+  //     alert('create a account ')
+  //   }
   })
 //   const url = `https://text-server.vercel.app/loginPage/${ID}&&${Password}`;
 //     var headers = {}
