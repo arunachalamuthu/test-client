@@ -31,16 +31,16 @@ const dispatch=useDispatch()
      fetch(`https://text-server.vercel.app/loginPage/${ID}&&${Password}`)
     .then((res)=>res.json())
     .then((data)=>{
-    console.log(data);
-  //   if(data.message){
-  //   alert(data.message.ID)
-  //  dispatch(detailsAction.home(data.message.ID))
-  //   navigate('/home')
-  //   }
-  //   else{
-  //     alert('you dont have account')
-  //     alert('create a account ')
-  //   }
+    console.log(data)
+    if(data.message){
+    alert(data.message.ID)
+   dispatch(detailsAction.home(data.message.ID))
+    navigate('/home')
+    }
+    else{
+      alert('you dont have account')
+      alert('create a account ')
+    }
   })
 //   const url = `https://text-server.vercel.app/loginPage/${ID}&&${Password}`;
 //     var headers = {}
