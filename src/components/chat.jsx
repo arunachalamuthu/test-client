@@ -21,7 +21,7 @@ const Chat = () => {
             console.log('start')
 
 
-            fetch(`http://localhost:3005/chat/msg`, {
+            fetch(`https://text-server.vercel.app/chat/msg`, {
                 method: "POST",
                 headers: {
                     'Content-type': 'application/json'
@@ -35,15 +35,30 @@ const Chat = () => {
     }
     const friend = () => {
 
-        fetch(`http://localhost:3005/chat/${mycode}&&${Friendcode}`)
+        // fetch(`https://text-server.vercel.app/chat/${mycode}&&${Friendcode}`)
         
-            .then((res) => res.json())
-            .then((data) => {
+        //     .then((res) => res.json())
+        //     .then((data) => {
 
-                if (data !== null) {
-                    setdata(data[0])
-                }
-            })
+        //         if (data !== null) {
+        //             setdata(data[0])
+        //         }
+        //     })
+        fetch(`https://text-server.vercel.app/chat/`,{
+            method:"POST",
+            headers:{
+                "Content-type":"application/json"
+            },
+            body:JSON.stringify({chat:mycode,Friendcode:Friendcode})
+        })
+        
+        .then((res) => res.json())
+        .then((data) => {
+
+            if (data !== null) {
+                setdata(data[0])
+            }
+        })
     }
 
     useEffect(() => {

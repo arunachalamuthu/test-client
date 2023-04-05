@@ -26,12 +26,27 @@ const FrontPage = () => {
 
   function call() {
     if (search) {
-      fetch(`http://localhost:3005/frontpage/${search}`)
+      // fetch(`http://localhost:3005/frontpage/${search}`)
+      //   .then((res) => res.json())
+      //   .then((data) => {
+      //     setID(data[0])
+        
+      //   })
+
+
+        fetch(`https://text-server.vercel.app/frontpage`,{
+          method:"POST",
+          headers:{
+            "Content-type":"application/json"
+          },
+          body:JSON.stringify({search:search})
+        })
         .then((res) => res.json())
         .then((data) => {
           setID(data[0])
         
         })
+
         // if (search) {
         //   fetch(`http://localhost:3005/convert/${search}`)
         //     .then((res) => res.json())
@@ -81,7 +96,15 @@ const FrontPage = () => {
    
   
      alert()
-     fetch(`http://localhost:3005/search`, {
+  //    fetch(`http://localhost:3005/search`, {
+  //     method: "POST",
+  //     headers: {
+  //         'Content-type': 'application/json'
+  //     },
+
+  //     body: JSON.stringify({ user:search,ID:giveID})
+  // })
+  fetch(`https://text-server.vercel.app/search`, {
       method: "POST",
       headers: {
           'Content-type': 'application/json'
@@ -89,7 +112,6 @@ const FrontPage = () => {
 
       body: JSON.stringify({ user:search,ID:giveID})
   })
-
 
 
     }

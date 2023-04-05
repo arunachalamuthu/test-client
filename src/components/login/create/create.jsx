@@ -26,7 +26,7 @@ const CreateLoginPage = () => {
     //   body:formData
     // })
     
-    fetch('https://text-server.vercel.app/ready',{
+     fetch('https://text-server.vercel.app/ready',{
       method:"POST",
       body:formData
     })
