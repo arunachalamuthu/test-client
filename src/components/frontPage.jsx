@@ -33,7 +33,7 @@ const FrontPage = () => {
         
       //   })
 
-
+console.log(search)
         fetch(`https://text-server.vercel.app/frontpage`,{
           method:"POST",
           headers:{
@@ -43,6 +43,7 @@ const FrontPage = () => {
         })
         .then((res) => res.json())
         .then((data) => {
+          console.log(data)
           setID(data[0])
         
         })
