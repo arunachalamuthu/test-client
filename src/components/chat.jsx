@@ -49,7 +49,7 @@ const Chat = () => {
             headers:{
                 "Content-type":"application/json"
             },
-            body:JSON.stringify({chat:mycode,Friendcode:Friendcode})
+            body:JSON.stringify({mycode:mycode,Friendcode:Friendcode})
         })
         
         .then((res) => res.json())
