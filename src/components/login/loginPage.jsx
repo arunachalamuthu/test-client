@@ -32,6 +32,7 @@ const dispatch=useDispatch()
     //   headers:{}
     //  })
     fetch('https://text-server.vercel.app/loginPage',{
+      method:"POST",
       headers:{
         'Content-Type':'application/json'
       },
