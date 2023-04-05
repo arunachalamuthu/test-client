@@ -17,7 +17,7 @@ const dispatch=useDispatch()
   if(ID.length !==0 || Password.length !==0){
 
   
-    fetch('https://text-server.vercel.app/check')
+    fetch('https://text-server.vercel.app/vercel-test')
     .then((res)=>{
       console.log(res);
       return res.json()
