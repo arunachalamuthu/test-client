@@ -17,31 +17,31 @@ const dispatch=useDispatch()
   if(ID.length !==0 || Password.length !==0){
 
   
-    fetch('https://text-server.vercel.app/vercel-test')
-    .then((res)=>{
-      console.log(res);
-      return res.json()
+  //   fetch('https://text-server.vercel.app/vercel-test')
+  //   .then((res)=>{
+  //     console.log(res);
+  //     return res.json()
      
-    })
-   .then((data)=>{
-     console.log(data)
-   })
+  //   })
+  //  .then((data)=>{
+  //    console.log(data)
+  //  })
 
-  //   fetch(`http://localhost:3005/loginPage/${ID}&&${Password}`)
-  //       // fetch(`https://text-server.vercel.app/loginPage/${ID}&&${Password}`)
-  //   .then((res)=>res.json())
-  //   .then((data)=>{
-  //   console.log(data);
-  //   if(data.message){
-  //   alert(data.message.ID)
-  //  dispatch(detailsAction.home(data.message.ID))
-  //   navigate('/home')
-  //   }
-  //   else{
-  //     alert('you dont have account')
-  //     alert('create a account ')
-  //   }
-  // })
+    // fetch(`http://localhost:3005/loginPage/${ID}&&${Password}`)
+     fetch(`https://text-server.vercel.app/loginPage/${ID}&&${Password}`)
+    .then((res)=>res.json())
+    .then((data)=>{
+    console.log(data);
+    if(data.message){
+    alert(data.message.ID)
+   dispatch(detailsAction.home(data.message.ID))
+    navigate('/home')
+    }
+    else{
+      alert('you dont have account')
+      alert('create a account ')
+    }
+  })
 //   const url = `https://text-server.vercel.app/loginPage/${ID}&&${Password}`;
 //     var headers = {}
 //   fetch(url, {
