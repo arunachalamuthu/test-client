@@ -38,7 +38,7 @@ console.log(search)
        await fetch(`https://text-server.vercel.app/frontpage`,{
           method:"POST",
           headers:{
-            "Content-type":"application/json"
+            'Content-type':'application/json'
           },
           body:JSON.stringify({search:search})
         })
