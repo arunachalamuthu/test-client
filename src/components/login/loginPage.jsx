@@ -42,7 +42,9 @@ const dispatch=useDispatch()
     })
     .then((res)=>res.json())
     .then((data)=>{
-    console.log(data)
+    console.log(data.ID)
+    // dispatch(detailsAction.home(data.message.ID))
+    //   navigate('/home')
   //   if(data.message){
   //   alert(data.message.ID)
   //  dispatch(detailsAction.home(data.message.ID))
