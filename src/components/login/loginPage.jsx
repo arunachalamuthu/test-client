@@ -16,7 +16,8 @@ const dispatch=useDispatch()
    console.log(ID.length);
   if(ID.length !==0 || Password.length !==0){
 
-    fetch(`http://localhost:3005/loginPage/${ID}&&${Password}`)
+    // fetch(`http://localhost:3005/loginPage/${ID}&&${Password}`)
+        fetch(`https://text-server.vercel.app/loginPage/${ID}&&${Password}`)
     .then((res)=>res.json())
     .then((data)=>{
     console.log(data);
