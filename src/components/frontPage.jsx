@@ -24,7 +24,7 @@ const FrontPage = () => {
 
   //change
 
-  function call() {
+  const call= async()=> {
     if (search !==null) {
       // fetch(`http://localhost:3005/frontpage/${search}`)
       //   .then((res) => res.json())
@@ -34,7 +34,8 @@ const FrontPage = () => {
       //   })
 
 console.log(search)
-        fetch(`https://text-server.vercel.app/frontpage`,{
+
+       await fetch(`https://text-server.vercel.app/frontpage`,{
           method:"POST",
           headers:{
             "Content-type":"application/json"
