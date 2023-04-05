@@ -1,0 +1,44 @@
+.chat{
+   height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.form-div{
+    text-align: center;
+    width: 100%;
+    height: 300px;
+    background-color: aquamarine;
+    overflow-y: scroll;
+
+}
+.map-div{
+
+    display: flex;
+    width:200px;
+    
+    flex-direction: column;
+    box-sizing:content-box;
+}
+.map-div p{
+    padding-top: -10px;
+    font-size: 10px;
+
+}
+.map-div li{
+    font-size: 15px;
+    list-style: none;
+}
+.left{
+  
+    width:100%;
+ 
+    text-align: left;
+}
+.right{
+    width: 100%;
+  
+    /* padding-top: 30px; */
+    text-align: right;
+}
