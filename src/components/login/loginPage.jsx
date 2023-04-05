@@ -16,23 +16,46 @@ const dispatch=useDispatch()
    console.log(ID.length);
   if(ID.length !==0 || Password.length !==0){
 
-    // fetch(`http://localhost:3005/loginPage/${ID}&&${Password}`)
-        fetch(`https://text-server.vercel.app/loginPage/${ID}&&${Password}`)
-    .then((res)=>res.json())
-    .then((data)=>{
-    console.log(data);
-    if(data.message){
-    alert(data.message.ID)
-   dispatch(detailsAction.home(data.message.ID))
-    navigate('/home')
-    }
-    else{
-      alert('you dont have account')
-      alert('create a account ')
-    }
-  })
+  
+    fetch('https://text-server.vercel.app/check')
+    .then((res)=>{
+      console.log(res);
+      return res.json()
+     
+    })
+   .then((data)=>{
+     console.log(data)
+   })
+
+  //   fetch(`http://localhost:3005/loginPage/${ID}&&${Password}`)
+  //       // fetch(`https://text-server.vercel.app/loginPage/${ID}&&${Password}`)
+  //   .then((res)=>res.json())
+  //   .then((data)=>{
+  //   console.log(data);
+  //   if(data.message){
+  //   alert(data.message.ID)
+  //  dispatch(detailsAction.home(data.message.ID))
+  //   navigate('/home')
+  //   }
+  //   else{
+  //     alert('you dont have account')
+  //     alert('create a account ')
+  //   }
+  // })
+//   const url = `https://text-server.vercel.app/loginPage/${ID}&&${Password}`;
+//     var headers = {}
+//   fetch(url, {
+//     method : "GET",
+//     mode: 'cors',
+//     headers: headers
+// }).then((res)=>res.json())
+// .then((data)=>{
+//   console.log(data)
+// })
+
 }
   }
+  
   return (
     <div className='login-page' >
       <form action="" className='login-form' onSubmit={login}>
